@@ -76,8 +76,8 @@ Table 3. What you did with each SonarQube issue in Table 1
 | 2 | kept | Standard CLI console output using System.out is intentional for student lab. |
 | 3 | kept | Standard CLI console output using System.out is intentional for student lab. |
 | 4 | kept | Standard CLI console output using System.out is intentional for student lab. |
-| 5 | fixed | <COMMIT_HASH> |
-| 6 | fixed | <COMMIT_HASH> |
+| 5 | fixed | b25e11c |
+| 6 | fixed | b25e11c |
 | 7 | kept | Standard CLI console output using System.out is intentional for student lab. |
 | 8 | kept | Standard CLI console output using System.out is intentional for student lab. |
 | 9 | kept | Standard CLI console output using System.out is intentional for student lab. |
