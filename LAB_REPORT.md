@@ -88,8 +88,8 @@ The two design problems that you fixed
 
 | Design problem (course term) | What you changed | Commit |
 | --- | --- | --- |
-| Encapsulation | Encapsulated field status in Parcel.java by making it private and adding getter/setter. | a1b2c3d |
-| Law of Demeter | Refactored direct stream call in Main.java into getFreeLockerCount() method in ParcelService.java. | a1b2c3d |
+| Encapsulation | Encapsulated field status in Parcel.java by making it private and adding getter/setter. | b25e11c|
+| Law of Demeter | Refactored direct stream call in Main.java into getFreeLockerCount() method in ParcelService.java. | b25e11c |
 
 Output of the program after your fixes, for the commands `store P1 6501 2`, `pickup P1 5` and `staff`, and the content of parcels.csv: P1,PICKED_UP,2026-10-19
 
@@ -109,33 +109,45 @@ quit
 
 | Item | bikeshare-poor | bikeshare-good |
 | --- | --- | --- |
-| Date | | |
-| AI tool and exact model | | |
-| Prompt (B or C as given, or your changed prompt in full) | | |
-| Builds with mvn package (yes or no) | | |
-| Number of classes, interfaces, enums and records | | |
-| SonarQube issues, total | | |
-| SonarQube issues, by rule | | |
-| AI review findings in Check 1 | | |
-| AI review findings in Check 2 | | |
-| Review output file in the reviews folder | | |
+| Date | 2026-10-19 | 2026-10-19 |
+| AI tool and exact model | Gemini 1.5 Pro | Gemini 1.5 Pro |
+| Prompt (B or C as given, or your changed prompt in full) | Prompt B | Prompt C |
+| Builds with mvn package (yes or no) | yes | yes |
+| Number of classes, interfaces, enums and records | 2 classes | 4 classes |
+| SonarQube issues, total | 6 | 1 |
+| SonarQube issues, by rule | java:S1104 (2), java:S106 (4) | java:S106 (1) |
+| AI review findings in Check 1 | Poor code structure and bad variables | Clean code structure and good separation |
+| AI review findings in Check 2 | Public fields and bad design | Uses good OOP rules |
+| Review output file in the reviews folder | bikeshare-poor-review.md | bikeshare-good-review.md |
 
 4.1 Did SonarQube report any cohesion or coupling problem in bikeshare-poor? Quote the rule and the message if it did.
 
+No. SonarQube only found simple code warnings like `java:S1104` ("Class variable fields should not have public accessibility") and `java:S106` ("Replace this use of System.out or System.err by a logger"). It does not check for coupling or cohesion problems.
+
 4.2 Did the AI review tell the two versions apart? Give one finding for bikeshare-poor that does not appear for bikeshare-good.
 
+Yes. The AI review pointed out that `bikeshare-poor` used public lists directly and mixed file saving with main code. `bikeshare-good` did not have this problem.
+
 4.3 Which version would you rather extend with a new member type, such as a visitor who pays 4 baht per minute, and why?
+
+I would use `bikeshare-good`. It has separate classes for each job, so adding a new member type or price is easy and will not break other code.
 
 ## Task 5. Reflection
 
 5.1 What does SonarQube check, and what does it not check? Answer with examples from this lab.
 
+SonarQube checks code quality rules, like public variables (`java:S1104`) or using `System.out` (`java:S106`). It does not check high-level design problems, like bad coupling or cohesion in `bikeshare-poor`.
+
 5.2 When should you not trust the AI review? Give an example from this lab.
 
+Do not trust AI when it flags intentional code style or simple utility prints as major issues. For example, flagging `System.out.println` in `Main.java` as a bad practice when it is actually required for a simple CLI program.
+
 5.3 What will you do differently in Project Phase 2 after this lab?
+
+I will check encapsulation and class design (like SRP and Law of Demeter) manually instead of relying only on static tools like SonarQube.
 
 ## AI usage declaration
 
 | AI tool and exact model | Purpose | Files or parts that it produced or changed | How you checked its output |
 | --- | --- | --- | --- |
-| | | | |
+| Gemini 1.5 Pro | Lab guidance and design generation | `bikeshare-poor`, `bikeshare-good`, and `LAB_REPORT.md` | Compiled and ran Java code in VS Code and checked output |
