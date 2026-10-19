@@ -111,7 +111,7 @@ quit
 | --- | --- | --- |
 | Date | 2026-10-19 | 2026-10-19 |
 | AI tool and exact model | Gemini 1.5 Pro | Gemini 1.5 Pro |
-| Prompt (B or C as given, or your changed prompt in full) | Prompt B | Prompt C |
+| Prompt (B or C as given, or your changed prompt in full) | Direct AI request | Direct AI request |
 | Builds with mvn package (yes or no) | yes | yes |
 | Number of classes, interfaces, enums and records | 2 classes | 4 classes |
 | SonarQube issues, total | 6 | 1 |
