@@ -1,7 +1,3 @@
-<img width="664" height="83" alt="image" src="https://github.com/user-attachments/assets/00f0e0af-f6f4-4d72-b2f0-9bc7ac718fb8" /># Prompts for the lab
-
-Copy each prompt exactly, and record in your report the AI tool, the exact model name and the date of every run. If your AI tool cannot open the files of a folder, paste each Java file after the prompt, with its file name on the line above it.
-
 ## Prompt A, AI review of code quality and design quality
 
 Use this prompt in Task 2 and Task 4. Replace `parcelpoint` with the name of the project folder, for example `parcelpoint`.
